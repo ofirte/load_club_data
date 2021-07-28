@@ -10,7 +10,7 @@ Run the following commands before running the script
 python -m pip install pandas 
 ```
 ```bash
-python -c 'import pandas'
+python -c "import pandas"
 ```
 ```bash
 python -m pip install openpyxl 

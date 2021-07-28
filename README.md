@@ -19,6 +19,6 @@ python -m pip install openpyxl
 ## Usage
 Use the global paths to the files.
 ```python
-python main.py <data_base_file_path> <new_club_data_path> <club_id>
+python club_data_loader.py <data_base_file_path> <new_club_data_path> <club_id>
 ```
 

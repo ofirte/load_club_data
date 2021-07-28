@@ -1,3 +1,4 @@
+import sys
 import pandas as pd
 import numpy as np
 import argparse
@@ -33,10 +34,14 @@ def parse_args():
     return parser.parse_args()
 
 
-def insert_data_to_user_table(xl, club_id, table):
-    user_headers = parse_headers(table)
-    user_id = get_next_id('id', table)
-    for index, row in xl.iterrows():
+def insert_data_to_user_table(data_table, club_id, user_table):
+    user_headers = parse_headers(user_table)
+    user_id = get_next_id('id', user_table)
+    x = data_table["email"].unique()
+    y = data_table["email"]
+    if len(data_table["email"].unique()) != len(data_table["email"]):
+        sys.exit("There are duplicated email address in the data file!\nNo info was added to the DB")
+    for index, row in data_table.iterrows():
         values = "({},{},{},{},{},{},{})".format(user_id+index, row['first_name'], row['last_name'], row['phone'],
                                                  row['email'], row['membershp_start_date'].date(), club_id)
         print("INSERT INTO USERS ({})\nVALUES({})".format(user_headers, values))
@@ -63,5 +68,3 @@ def main(args):
 
 if __name__ == '__main__':
     main(parse_args())
-
-

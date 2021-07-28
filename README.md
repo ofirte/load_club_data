@@ -7,6 +7,9 @@ club_data_loader is a Python script for loading new club data into our DB.
 Run the following commands before running the script
 
 ```bash
+python -m pip install pandas 
+```
+```bash
 python -c 'import pandas'
 ```
 ```bash

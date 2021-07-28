@@ -1,6 +1,6 @@
 # club_data_loader
 
-club_data_loader is a Python sript for loading new club data into our DB.
+club_data_loader is a Python script for loading new club data into our DB.
 
 ## Installation
 
@@ -14,8 +14,7 @@ python -m pip install openpyxl
 ```
 
 ## Usage
-Assuming your Excel files are in your working directory.
-If that is not the case use the global path to the files.
+Use the global paths to the files.
 ```python
 python main.py <data_base_file_path> <new_club_data_path> <club_id>
 ```

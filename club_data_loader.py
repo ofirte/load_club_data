@@ -37,8 +37,6 @@ def parse_args():
 def insert_data_to_user_table(data_table, club_id, user_table):
     user_headers = parse_headers(user_table)
     user_id = get_next_id('id', user_table)
-    x = data_table["email"].unique()
-    y = data_table["email"]
     if len(data_table["email"].unique()) != len(data_table["email"]):
         sys.exit("There are duplicated email address in the data file!\nNo info was added to the DB")
     for index, row in data_table.iterrows():
